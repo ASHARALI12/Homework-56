@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random Number Toggle App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        #number {
+            font-size: 60px;
+            margin: 20px;
+            color: #0077cc;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎲 Random Number App</h1>
+    <div id="number">0</div>
+    <button onclick="toggleNumber()">Click Me</button>
+
+    <script>
+        let clickCount = 0;
+        let intervalId = null;
+
+        function generateRandomNumber() {
+            const num = Math.floor(Math.random() * 100) + 1; // 1 to 100
+            document.getElementById("number").textContent = num;
+        }
+
+        function toggleNumber() {
+            clickCount++;
+
+            if (clickCount % 2 === 0) {
+                // Even click - start changing
+                intervalId = setInterval(generateRandomNumber, 500);
+            } else {
+                // Odd click - stop changing
+                clearInterval(intervalId);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
