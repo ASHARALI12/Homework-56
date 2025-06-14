@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Show Current Date</title>
+</head>
+
+<body>
+
+    <h2>Current Date Info</h2>
+    <p id="dateDisplay"></p>
+
+    <script>
+        // Create date object
+        const today = new Date();
+
+        // Get day, month, year
+        const day = today.getDate();
+        const month = today.getMonth() + 1; // JS months are 0-11
+        const year = today.getFullYear();
+
+        // Show it on page
+        document.getElementById("dateDisplay").innerHTML =
+            "Date: " + day + " / Month: " + month + " / Year: " + year;
+    </script>
+
+</body>
+
+</html>
