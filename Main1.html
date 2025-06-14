@@ -2,25 +2,30 @@
 <html>
 
 <head>
-    <title>Show Current Date</title>
+    <title>Current Date Info</title>
 </head>
 
 <body>
 
-    <h2>Current Date Info</h2>
+    <h2>Current Date Information</h2>
     <p id="dateDisplay"></p>
 
     <script>
         // Create date object
         const today = new Date();
 
-        // Get day, month, year
+        // Day names array
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        // Get values
+        const dayName = days[today.getDay()];
         const day = today.getDate();
-        const month = today.getMonth() + 1; // JS months are 0-11
+        const month = today.getMonth() + 1; // 0-based
         const year = today.getFullYear();
 
-        // Show it on page
+        // Display
         document.getElementById("dateDisplay").innerHTML =
+            "Day: " + dayName + "<br>" +
             "Date: " + day + " / Month: " + month + " / Year: " + year;
     </script>
 
